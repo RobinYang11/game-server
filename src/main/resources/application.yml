@@ -1,0 +1,9 @@
+
+server:
+  port: 8081
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://root:%40yang651564@106.14.237.78/admin
+      database: game
