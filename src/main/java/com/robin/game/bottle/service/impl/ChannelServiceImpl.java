@@ -1,7 +1,6 @@
 package com.robin.game.bottle.service.impl;
 
 import com.robin.game.bottle.dto.EntityPageResultDto;
-import com.robin.game.bottle.entity.BottleEntity;
 import com.robin.game.bottle.entity.ChannelEntity;
 import com.robin.game.bottle.service.ChannelService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +24,8 @@ public class ChannelServiceImpl implements ChannelService {
     @Override
     public EntityPageResultDto<ChannelEntity> queryByPage(int page, int pageSize) {
         Query query = Query.query(new Criteria());
-        long totalCount = mongoTemplate.count(query, BottleEntity.class);
-        Iterable<ChannelEntity> bottles = this.mongoTemplate.find(query.skip((page - 1) * pageSize).limit(pageSize), ChannelEntity.class, "bottle");
+        long totalCount = mongoTemplate.count(query, ChannelEntity.class);
+        Iterable<ChannelEntity> bottles = this.mongoTemplate.find(query.skip((page - 1) * pageSize).limit(pageSize), ChannelEntity.class, "channel");
         EntityPageResultDto<ChannelEntity> result = new EntityPageResultDto<>();
         result.setEntities(bottles);
         result.setTotal(totalCount);
