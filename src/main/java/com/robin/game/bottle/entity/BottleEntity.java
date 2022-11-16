@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("bottle")
 @Data
-public class BottleEntity {
+public class BottleEntity extends BaseEntity {
 
     @Id
     String id;
@@ -15,5 +15,14 @@ public class BottleEntity {
     String name;
 
     String creatorId;
+
+    String content;
+
+    String channelId;
+
+    /**
+     * 是否已读  1 未读   2 已读
+     */
+    short read;
 
 }

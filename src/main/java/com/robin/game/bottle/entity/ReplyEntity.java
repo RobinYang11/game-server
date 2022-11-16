@@ -5,13 +5,17 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document("reply")
 @Data
-@Document("user")
-public class UserEntity extends BaseEntity {
+public class ReplyEntity extends BaseEntity {
 
     @Id
-    String id ;
+    private String id;
 
-    String name ;
+    private String bottleId;
+
+    private String replyContent;
+
+    private String authorId;
 
 }

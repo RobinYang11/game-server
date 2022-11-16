@@ -1,7 +1,6 @@
 package com.robin.game.bottle.service.impl;
 
 import com.robin.game.bottle.dto.EntityPageResultDto;
-import com.robin.game.bottle.entity.BottleEntity;
 import com.robin.game.bottle.entity.UserEntity;
 import com.robin.game.bottle.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +17,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserEntity addUser(UserEntity user) {
+        user.setTmCreate(System.currentTimeMillis());
         return this.mongoTemplate.save(user);
     }
 

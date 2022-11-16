@@ -17,6 +17,7 @@ public class BottleServiceImpl implements BottleService {
 
     @Override
     public BottleEntity add(BottleEntity bottle) {
+        bottle.setTmCreate(System.currentTimeMillis());
         return this.mongoTemplate.save(bottle);
     }
 
